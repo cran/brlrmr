@@ -1,6 +1,6 @@
 Package: brlrmr
 Title: Bias Reduction with Missing Binary Response
-Version: 0.1.0
+Version: 0.1.2
 Date: 2016-11-23
 Authors@R: c(person("Arnab", "Maity", email = "akumar@stat.tamu.edu", role = c("aut", "cre")),
              person("Vivek", "Pradhan", email = "vip296@mail.harvard.edu", role = "ctb"),
@@ -11,12 +11,12 @@ Imports: boot, brglm, MASS, profileModel, Rcpp, stats
 License: GPL-3
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 5.0.1
+RoxygenNote: 6.0.1
 NeedsCompilation: no
-Packaged: 2017-05-23 22:32:51 UTC; SUDESHNA
+Packaged: 2017-06-09 19:14:09 UTC; akumar
 Author: Arnab Maity [aut, cre],
   Vivek Pradhan [ctb],
   Ujjwal Das [ctb]
 Maintainer: Arnab Maity <akumar@stat.tamu.edu>
 Repository: CRAN
-Date/Publication: 2017-05-24 04:27:44 UTC
+Date/Publication: 2017-06-09 23:54:05 UTC

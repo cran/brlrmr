@@ -1,6 +1,7 @@
 #' @importFrom stats binomial qnorm contrasts is.empty.model model.matrix
 #' model.response na.pass
-
+#' @export
+#'
 fil <-
 function(formula, data, parameter = NULL, family = binomial, alpha = 0.05, interaction = FALSE,
                 k = NULL, na.action)

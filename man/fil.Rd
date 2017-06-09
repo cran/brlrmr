@@ -70,24 +70,6 @@ as in \code{\link{lm}}. Always set to na.pass. Note that setting any other value
 %% ~put references to the literature/web site here ~
 Bias Reduction in Logistic Regression with Missing Responses when the Missing Data Mechanism is Nonignorable.
 }
-%\author{
-%%  ~~who you are~~
-%Arnab Kumar Maity
-%}
-%\note{
-%%  ~~further notes~~
-%}
-
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-%\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-%}
-
-%##---- Should be DIRECTLY executable !! ----
-%##-- ==>  Define data, use random,
-%##--	or do  help(data=index)  for the standard data sets.
-
 \examples{
 \dontrun{
 #############################################
@@ -117,7 +99,6 @@ fil(y ~ x1 + x2 + x3 + x4, data = simulated.data, parameter,
 family = binomial(link = "logit"), na.action = na.pass)
 }
 
-\dontrun{
 #############################################
 ##### Real data example with separation #####
 #############################################
@@ -127,9 +108,4 @@ fil(hyp ~ age2 + age3, data = nhanes, family = binomial(link = "logit"), na.acti
 data(incontinence)  # load nhanes data
 fil(y ~ x1 + x2 + x3, data = incontinence, family = binomial(link = "logit"), na.action = na.pass)
 }
-}
 
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-%\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

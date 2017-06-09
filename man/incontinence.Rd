@@ -23,4 +23,3 @@ incontinence
 A urinary incontinence study.
 }
 \keyword{datasets}
-

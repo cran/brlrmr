@@ -14,4 +14,3 @@ generated from standard normal distribution. The missing binary response is
 generated using the simulation process as described in the reference.
 }
 \keyword{datasets}
-

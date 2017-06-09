@@ -1,3 +1,5 @@
+#' @export
+#'
 em.fil.interaction <-
 function(parameter, X, full.missing.data, observed.data,
                                full.data, k, family = family)

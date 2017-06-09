@@ -1,6 +1,7 @@
 #' @importFrom stats binomial qnorm contrasts is.empty.model model.matrix
 #' model.response na.pass
-
+#' @export
+#'
 il <-
   function(formula, data, parameter = NULL, family = binomial, alpha = 0.05, interaction = FALSE,
            k = NULL, na.action)
@@ -35,6 +36,7 @@ il <-
     }
     data <- cbind(y, x[, -1])
 
+    sep <- 0  # separation indicator = 1 if separation, = 0 otherwise
     tau <- qnorm(1 - alpha/2)
     n   <- nrow(data)  # number of observations
     p1  <- ncol(data)  # number of covariates + 1
@@ -112,6 +114,7 @@ il <-
         beta.hat = NA
         beta.se.hat = NA
         significance.beta = NA
+        sep <- 1
       } else {
         w      <- em.il.result$weights  # weights
         n.full <- nrow(full.data)
@@ -227,6 +230,7 @@ il <-
         beta.se.hat  <- NA
         alpha.se.hat <- NA
         alpha.se.hat <- NA
+        sep          <- 1
       } else {
 
         w      <- em.il.result$weights  # weights
@@ -319,6 +323,7 @@ il <-
                 alpha.hat          = beta.hat[(p1 +1):length(beta.hat)],
                 alpha.se.hat       = alpha.se.hat,
                 z.value.alpha      = (abs(beta.hat[(p1 +1):length(beta.hat)] - 0)/alpha.se.hat),
-                p.value.alpha      = 2 * (1 - stats::pnorm((abs(beta.hat[(p1 +1):length(beta.hat)] - 0)/alpha.se.hat)))
+                p.value.alpha      = 2 * (1 - stats::pnorm((abs(beta.hat[(p1 +1):length(beta.hat)] - 0)/alpha.se.hat))),
+                sep                = sep
     ))
   }

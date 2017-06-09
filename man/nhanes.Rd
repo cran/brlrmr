@@ -21,4 +21,3 @@ nhanes
 A small data set with missing values.
 }
 \keyword{datasets}
-

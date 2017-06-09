@@ -65,28 +65,13 @@ as in \code{\link{lm}}. Always set to na.pass. Note that setting any other value
   \item{alpha.se.hat }{standard error of the them.}
   \item{z.value.alpha }{Wald Z value for them.}
   \item{p.value.alpha }{p values for them.}
+  \item{sep }{separation indicator = 1 if separation, = 0 otherwise}
 }
 \references{
 %% ~put references to the literature/web site here ~
 Ibrahim, J. G. and Lipsitz, S. R. (1996). Parameter estimation from incomplete data in binomial regression when the missing data mechanism is nonignorable. \emph{Biometrics}, 52:1071--1078.
 }
-%\author{
-%%  ~~who you are~~
-%Arnab Kumar Maity
-%}
-%\note{
-%%  ~~further notes~~
-%}
 
-%% ~Make other sections like Warning with \section{Warning }{....} ~
-
-%\seealso{
-%% ~~objects to See Also as \code{\link{help}}, ~~~
-%}
-
-%##---- Should be DIRECTLY executable !! ----
-%##-- ==>  Define data, use random,
-%##--	or do  help(data=index)  for the standard data sets.
 
 \examples{
 \dontrun{
@@ -127,7 +112,3 @@ il(hyp ~ age2 + age3, data = nhanes, family = binomial(link = "logit"), na.actio
 }
 }
 
-% Add one or more standard keywords, see file 'KEYWORDS' in the
-% R documentation directory.
-%\keyword{ ~kwd1 }% use one of  RShowDoc("KEYWORDS")
-%\keyword{ ~kwd2 }% __ONLY ONE__ keyword per line

@@ -1,3 +1,5 @@
+#' @export
+#'
 em.il.interaction <-
 function(parameter, X, full.missing.data, observed.data,
                               full.data, k, family = family)

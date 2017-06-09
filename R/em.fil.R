@@ -1,3 +1,5 @@
+#' @export
+#'
 em.fil <-
 function(parameter, X, full.missing.data, observed.data, full.data, family = family)
 {  # parameter = (beta, alpha)
