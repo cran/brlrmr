@@ -121,11 +121,14 @@ function(formula, data, parameter = NULL, family = binomial, alpha = 0.05, inter
     full.y <- full.data[, 1]
     full.r <- full.data[, (p1 + 1)]
     q      <- NULL
+    W      <- diag(w)
+    Ws     <- sqrt(W)
+    H      <- Ws %*% full.X %*% chol2inv((chol(t(full.X) %*% W %*% full.X))) %*% t(full.X) %*% Ws
 
 
     for(j in 1:p1)
     {
-      q[j] <- sum(w * (full.y - mu) * full.X[, j])
+      q[j] <- sum(w * (full.y - mu + H[j, j]*(0.5 - mu)) * full.X[, j])
     }
 
     s <- matrix(0, nrow = n.full, ncol = p1)
@@ -134,7 +137,7 @@ function(formula, data, parameter = NULL, family = binomial, alpha = 0.05, inter
     {
       for(j in 1:p1)
       {
-        s[i, j] <- (full.y[i] - mu[i]) * full.X[i, j]
+        s[i, j] <- (full.y[i] - mu[i] + H[j, j]*(0.5 - mu[i])) * full.X[i, j]
       }  # S_i is p dimensional vector
     }
 
@@ -156,10 +159,14 @@ function(formula, data, parameter = NULL, family = binomial, alpha = 0.05, inter
     full.X <- cbind(full.X, full.y * full.X[, k + 1], full.y)
     mu     <- boot::inv.logit(full.X %*% current.parameter[(p1 + 1):length(beta.hat.firth)])
     q      <- rep(0, p1 + 2)
+    W  <- diag(w)
+    Ws <- sqrt(W)
+    H  <- Ws %*% full.X %*% chol2inv((chol(t(full.X) %*% W %*% full.X))) %*% t(full.X) %*% Ws
+
 
     for(j in 1:(p1 + 2))
     {
-      q[j] <- sum(w * (full.r - mu) * full.X[, j])
+      q[j] <- sum(w * (full.r - mu + H[j, j]*(0.5 - mu)) * full.X[, j])
     }
 
 
@@ -167,9 +174,9 @@ function(formula, data, parameter = NULL, family = binomial, alpha = 0.05, inter
 
     for(i in 1:n.full)
     {
-      for(j in 1:(p1 + 2))
+      for(j in 1:p1)
       {
-        s[i, j] <- (full.r[i] - mu[i]) * full.X[i, j]
+        s[i, j] <- (full.r[i] - mu[i] + H[j, j]*(0.5 - mu[i])) * full.X[i, j]
       }  # S_i is p dimensional vector
     }
 
@@ -228,11 +235,14 @@ function(formula, data, parameter = NULL, family = binomial, alpha = 0.05, inter
     full.y <- full.data[, 1]
     full.r <- full.data[, (p1 + 1)]
     q      <- NULL
+    W      <- diag(w)
+    Ws     <- sqrt(W)
+    H      <- Ws %*% full.X %*% chol2inv((chol(t(full.X) %*% W %*% full.X))) %*% t(full.X) %*% Ws
 
 
     for(j in 1:p1)
     {
-      q[j] <- sum(w * (full.y - mu) * full.X[, j])
+      q[j] <- sum(w * (full.y - mu + H[j, j]*(0.5 - mu)) * full.X[, j])
     }
 
     s <- matrix(0, nrow = n.full, ncol = p1)
@@ -241,7 +251,7 @@ function(formula, data, parameter = NULL, family = binomial, alpha = 0.05, inter
     {
       for(j in 1:p1)
       {
-        s[i, j] <- (full.y[i] - mu[i]) * full.X[i, j]
+        s[i, j] <- (full.y[i] - mu[i] + H[j, j]*(0.5 - mu[i])) * full.X[i, j]
       }  # S_i is p dimensional vector
     }
 
@@ -260,24 +270,27 @@ function(formula, data, parameter = NULL, family = binomial, alpha = 0.05, inter
 
 
     Fisher.alpha <- em.firth.result$Fisher.firth.alpha
-    q      <- rep(0, p1 + 1)
+    full.Xy <- cbind(full.X, full.y)
+    mu <- boot::inv.logit(full.Xy %*% current.parameter[(p1 +1):length(beta.hat.firth)])
+    q  <- rep(0, p1 + 1)
+    W  <- diag(w)
+    Ws <- sqrt(W)
+    H  <- Ws %*% full.Xy %*% chol2inv((chol(t(full.Xy) %*% W %*% full.Xy))) %*% t(full.Xy) %*% Ws
 
 
-    for(j in 1:p1)
+    for(j in 1:(p1 + 1))
     {
-      q[j] <- sum(w * (full.r - mu) * full.X[, j])
+      q[j] <- sum(w * (full.r - mu + H[j, j]*(0.5 - mu)) * full.Xy[, j])
     }
-    q[p1 + 1] <- sum(w * (full.r - mu) * full.y)
 
     s <- matrix(0, nrow = n.full, ncol = (p1 + 1))
 
     for(i in 1:n.full)
     {
-      for(j in 1:p1)
+      for(j in 1:(p1 + 1))
       {
-        s[i, j] <- (full.r[i] - mu[i]) * full.X[i, j]
+        s[i, j] <- (full.r[i] - mu[i] + H[j, j]*(0.5 - mu[i])) * full.Xy[i, j]
       }  # S_i is p dimensional vector
-      s[i, (p1 + 1)] <- (full.r[i] - mu[i]) * full.y[i]
     }
 
     second.term <- 0
