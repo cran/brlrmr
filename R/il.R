@@ -272,24 +272,25 @@ il <-
         beta.se.hat <- sqrt(diag(se.matrix))
 
         Fisher.alpha <- em.il.result$Fisher.alpha
+        full.Xy <- cbind(full.X, full.y)
+        mu <- boot::inv.logit(full.Xy %*% current.parameter[(p1 +1):length(beta.hat)])
         q      <- rep(0, p1 + 1)
 
 
-        for(j in 1:p1)
+        for(j in 1:(p1 + 1))
         {
-          q[j] <- sum(w * (full.r - mu) * full.X[, j])
+          q[j] <- sum(w * (full.r - mu) * full.Xy[, j])
         }
-        q[p1 + 1] <- sum(w * (full.r - mu) * full.y)
+
 
         s <- matrix(0, nrow = n.full, ncol = (p1 + 1))
 
         for(i in 1:n.full)
         {
-          for(j in 1:p1)
+          for(j in 1:(p1 + 1))
           {
-            s[i, j] <- (full.r[i] - mu[i]) * full.X[i, j]
+            s[i, j] <- (full.r[i] - mu[i]) * full.Xy[i, j]
           }  # S_i is p dimensional vector
-          s[i, (p1 + 1)] <- (full.r[i] - mu[i]) * full.y[i]
         }
 
         second.term <- 0

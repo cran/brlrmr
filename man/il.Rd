@@ -108,7 +108,7 @@ family = binomial(link = "logit"), na.action = na.pass)
 #############################################
 data(nhanes)  # load nhanes data
 il(hyp ~ age2 + age3, data = nhanes, family = binomial(link = "logit"), na.action = na.pass)
-# IL method encounters seperation
+# IL method encounters separation
 }
 }
 

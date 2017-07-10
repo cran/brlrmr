@@ -1,4 +1,4 @@
-f9059b28fb04e48636691ff34826aa57 *DESCRIPTION
+c5160b33ac903414997e106719d02065 *DESCRIPTION
 9b1f3f1c4263fd6544a2fcfc38a20fad *NAMESPACE
 04bbb98c3edd1d9a9e884c772c57885b *R/brlrmr-internal.R
 04bbb98c3edd1d9a9e884c772c57885b *R/brmrlr-internal.R
@@ -6,8 +6,8 @@ f9059b28fb04e48636691ff34826aa57 *DESCRIPTION
 2bacd8cc2c1ecc6f8144bbc7e4966f8f *R/em.fil.interaction.R
 7f5f90959b2026a75bb4762636a0391a *R/em.il.R
 16e2b164511defd85eaf079c28b08280 *R/em.il.interaction.R
-361d72a572cc290859be5631df9ceeee *R/fil.R
-00977b22b57952a64de4de829689cd2d *R/il.R
+0b1c23ed0ce2ba023653e9bc92c0073a *R/fil.R
+71c3e85879990c6332ae4c909975c421 *R/il.R
 2e6063c73f6663e6aff6e05b1030fed0 *R/incontinence.R
 43542290a365532e9a297f1f53ad5e25 *R/nhanes.R
 2a8fc1538d48f31384d2cc1951ebaab4 *R/simulated.data.R
@@ -19,7 +19,7 @@ bc7724f2fb41605a579ecdac0f44332e *man/em.fil.interaction.Rd
 626306163b3e1e07c3c85779a23d7c28 *man/em.il.Rd
 4f2db8e436df1faa1ae741e27a900344 *man/em.il.interaction.Rd
 1394de2620b10c87f674221b0bec9263 *man/fil.Rd
-56d2b67cd3c49a7dc6af0f2ceabd1a58 *man/il.Rd
+b4f3dad17c74f7d87cadd50364f49aaa *man/il.Rd
 4ae2847af2345d7d91bc10605765bf41 *man/incontinence.Rd
 7f90469e82139dc3caca405b1e6b1f75 *man/nhanes.Rd
 f9acbc146ad0a9be3bef4b33ce150433 *man/simulated.data.Rd

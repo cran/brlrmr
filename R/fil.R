@@ -174,7 +174,7 @@ function(formula, data, parameter = NULL, family = binomial, alpha = 0.05, inter
 
     for(i in 1:n.full)
     {
-      for(j in 1:p1)
+      for(j in 1:(p1 + 2))
       {
         s[i, j] <- (full.r[i] - mu[i] + H[j, j]*(0.5 - mu[i])) * full.X[i, j]
       }  # S_i is p dimensional vector
