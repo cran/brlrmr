@@ -166,7 +166,7 @@ il <-
 
         for(j in 1:(p1 + 2))
         {
-          q[j] <- sum(w * (full.y - mu) * full.X[, j])
+          q[j] <- sum(w * (full.r - mu) * full.X[, j])
         }
 
 
@@ -177,7 +177,7 @@ il <-
         {
           for(j in 1:(p1 + 2))
           {
-            s[i, j] <- (full.y[i] - mu[i]) * full.X[i, j]
+            s[i, j] <- (full.r[i] - mu[i]) * full.X[i, j]
           }  # S_i is p dimensional vector
         }
 
