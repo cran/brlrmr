@@ -1,0 +1,15 @@
+citHeader("To cite the 'brlrmr' package in publications use:")
+
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl = TRUE)
+vers <- paste("R package version", meta$Version)
+
+bibentry(bibtype = "Article",
+         title = "Bias Reduction in Logistic Regression with Missing Responses When the Missing Data Mechanism is Nonignorable",
+         author = c(person("Maity", "Arnab Kumar"),
+                    person("Pradhan", "Vivek"),
+                    person("Das", "Ujjwal")),
+         journal = "The American Statistician",
+         pages = "1-10",
+         year = "2018",
+         publisher = "Taylor and Francis",
+         url = "https://doi.org/10.1080/00031305.2017.1407359")

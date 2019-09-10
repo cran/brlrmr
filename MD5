@@ -1,7 +1,5 @@
-4afbad74075e324a0de0e3ff92119d16 *DESCRIPTION
+75b82bd1ad1d6fb6f61d203ad67b3533 *DESCRIPTION
 9b1f3f1c4263fd6544a2fcfc38a20fad *NAMESPACE
-04bbb98c3edd1d9a9e884c772c57885b *R/brlrmr-internal.R
-04bbb98c3edd1d9a9e884c772c57885b *R/brmrlr-internal.R
 74f39398018694a1edcdc32e288b1774 *R/em.fil.R
 2bacd8cc2c1ecc6f8144bbc7e4966f8f *R/em.fil.interaction.R
 7f5f90959b2026a75bb4762636a0391a *R/em.il.R
@@ -14,6 +12,7 @@
 629a425c43846a1fde87179ee70d8022 *data/incontinence.rda
 718be9f303258f8b2daf2d725b2104bc *data/nhanes.rda
 d22faa99b5572d5a9228f5f2683c217e *data/simulated.data.rda
+afc6d4a2a3c7e4c439c6e8c3267b6b4f *inst/CITATION
 ac5eebfa3f3a184139f2389a8fb81163 *man/em.fil.Rd
 bc7724f2fb41605a579ecdac0f44332e *man/em.fil.interaction.Rd
 626306163b3e1e07c3c85779a23d7c28 *man/em.il.Rd
